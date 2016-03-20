@@ -17,13 +17,27 @@ char * get_last_word(char * str){
 	for (len = 0; str[len] != '\0'; len++);
 	int index = len - 1;
 	if (len > 1){
-		while (str[index] != ' ')
+		while (str[index] == ' ')
 			index--;
+		if (index == -1)
+			return "";
+		//printf("index pos %d\n", index);
+		while (str[index] != ' '){
+			if (index == 0)
+				break;
+			index--;
+		}
 	}
+	//index++;
+	//printf("index pos %d\n", index);
 	char *last_word = (char*)malloc(sizeof(char) * (len - index));
 	int i = 0;
 	while (index < len){
-		last_word[i++] = str[index++];
+		if (str[index] == ' ')
+			index++;
+		else{
+			last_word[i++] = str[index++];
+		}
 	}
 	last_word[i] = '\0';
 	return last_word;
