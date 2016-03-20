@@ -22,6 +22,7 @@ int main(){
 	//Test getSubstring
 
 	//Test getLastWord
+	char sentences[][100] = { "abc is a word", "he he", "   ", "d ab   ", "  x", "asd324", "", "a" };
 
 	return 0;
 }
