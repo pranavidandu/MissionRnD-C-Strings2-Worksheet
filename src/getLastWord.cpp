@@ -19,17 +19,14 @@ char * get_last_word(char * str){
 	if (len > 1){
 		while (str[index] == ' ')
 			index--;
-		if (index == -1)
+		if (index == -1)//if input contains all spaces
 			return "";
-		//printf("index pos %d\n", index);
 		while (str[index] != ' '){
-			if (index == 0)
+			if (index == 0)//if input has only one word
 				break;
 			index--;
 		}
 	}
-	//index++;
-	//printf("index pos %d\n", index);
 	char *last_word = (char*)malloc(sizeof(char) * (len - index));
 	int i = 0;
 	while (index < len){
